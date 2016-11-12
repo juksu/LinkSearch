@@ -4,8 +4,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf8">
-	<link rel="stylesheet" href="css/example.css"> <!-- TODO -->
-	<link rel="javascript" href="js/test.js"> <!-- TODO -->
+	<link rel="stylesheet" href="css/style.css">
 	<title>Link Analyzer</title>
 </head>
 <body>
@@ -17,8 +16,10 @@
 			<form id="foobar" action="./index.php" method="get">
 				<label for="urlinput">URL</label>
 				<input type="text" id="urlinput" name="urlinput" size="50" required pattern="^\S*$"></input> <!-- pattern="^\S*$" does not allow space in input -->
-				<button>search links</button>
+				<button>Search links</button>
 			</form>
+			<a href="./about.html"><button>About</button></a>
+			
 		</div>
 		
 		<div class="results">
@@ -28,6 +29,9 @@
 					echo "<div>show the input: ";
 					echo $_GET["urlinput"];
 					echo "</div>";
+					
+					
+					
 				}
 			?>
 		</div>
@@ -38,7 +42,6 @@
 		
 	</main>
 	<!-- <footer></footer> -->
-
 
 </body>
 </html>

@@ -30,7 +30,7 @@
 		
 		$in = "abc.com";
 		
-		if( !( $stmt-> bind_param( "s", "abc.com" ) ) )
+		if( !( $stmt-> bind_param( "s", $in ) ) )
 			echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
 		else
 			echo "Binding successful<br>";
@@ -46,13 +46,13 @@
 		
 		//~ return $conn;
 		
-		$conn->close();
+		//~ $conn->close();
 	}
 	
 	
 	function getSourceCode( $targetURL )
 	{
-		
+		echo "do something";
 		
 	}
 ?>
