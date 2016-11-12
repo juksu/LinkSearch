@@ -22,21 +22,27 @@
 		echo "Connected successfully<br>";
 		
 		
-		//TODO: prevent SQL injection!
-		//~ $stmt = $conn->prepare( "SELECT * FROM url" );
+		//TODO all nice and fine to see if it works but this section is not supposed to be in this function
+		if( !( $stmt = $conn->prepare( "SELECT * FROM url WHERE address = ?" ) ) )
+			echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+		else
+			echo "Prepare successful<br>";
 		
-		//~ $stmt->execute();
+		$in = "abc.com";
 		
-		//~ $result = $stmt->get_result();
+		if( !( $stmt-> bind_param( "s", "abc.com" ) ) )
+			echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+		else
+			echo "Binding successful<br>";
 		
-		$result = $conn->query("SELECT * FROM url" );
+		$stmt->execute();
+		
+		$result = $stmt->get_result();
 		
 		while( $row = $result->fetch_assoc() )
 		{
 			echo $row[ "address" ] . "<br>";
 		}
-		
-		echo "Query?<br>";
 		
 		//~ return $conn;
 		
