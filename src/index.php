@@ -1,11 +1,11 @@
-<?php include "php/foobar.php"; ?>
+<?php include "php/main.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf8">
 	<link rel="stylesheet" href="css/style.css">
-	<title>Link Analyzer</title>
+	<title>Link Search</title>
 </head>
 <body>
 	
@@ -28,18 +28,11 @@
 				{
 					echo "<div>show the input: ";
 					echo $_GET["urlinput"];
+					echo main( $_GET["urlinput"] );
 					echo "</div>";
-					
-					
-					
 				}
 			?>
 		</div>
-		
-		<div>
-			<?php connectDB() ?>
-		</div>
-		
 	</main>
 	<!-- <footer></footer> -->
 

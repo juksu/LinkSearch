@@ -1,4 +1,5 @@
 <?php
+	
 	function parseINIDB()
 	{
 		$ini_array = parse_ini_file("/home/fuchsy/Documents/config/db.ini.php");
@@ -17,6 +18,7 @@
 		
 		if( $conn->connect_error )
 		{
+			// TODO in my use case favorable to have a simple return instead of killing the script alltogether
 			die( "Connection failed: " . $conn->connect_error);
 		}
 		echo "Connected successfully<br>";
@@ -46,13 +48,6 @@
 		
 		//~ return $conn;
 		
-		//~ $conn->close();
+		$conn->close();
 	}
-	
-	
-	function getSourceCode( $targetURL )
-	{
-		echo "do something";
-		
-	}
-?>
+?>	
