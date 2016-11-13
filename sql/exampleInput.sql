@@ -8,4 +8,4 @@ INSERT INTO url (address) VALUES ("pqr.com");
 INSERT INTO linksto( sourcepage, link ) VALUES ("abc.com", "def.com");
 INSERT INTO linksto( sourcepage, link ) VALUES ("abc.com", "ghi.com");
 INSERT INTO linksto( sourcepage, link ) VALUES ("mno.com", "mno.com");
-INSERT INTO linksto( sourcepage, link ) VALUES ("mno.com", "pqr.com");
+INSERT INTO linksto( sourcepage, link ) VALUES ("mno.com", "pqrurl.com");

@@ -16,7 +16,7 @@
 			<form id="foobar" action="./index.php" method="get">
 				<label for="urlinput">URL</label>
 				<input type="text" id="urlinput" name="urlinput" size="50" required pattern="^\S*$"></input> <!-- pattern="^\S*$" does not allow space in input -->
-				<button>Search links</button>
+				<button>Search for links</button>
 			</form>
 			<a href="./about.html"><button>About</button></a>
 			

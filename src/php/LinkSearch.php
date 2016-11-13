@@ -1,12 +1,28 @@
 <?php
-	include "dbAccess.php";
-
 	class LinkSearch
 	{
+		private $targetURL;
+		private $linkList = [];
 		
-		public $targetURL;
-		//~ public $linkList = array();
-		public $linkList;
+		public function setTargetURL( $targetURL )
+		{
+			$this->targetURL = $targetURL;
+		}
+		
+		public function getTargetURL()
+		{
+			return $this->targetURL;
+		}
+		
+		public function setLinkList( $linkList )
+		{
+			$this->linkList = $linkList;
+		}
+		
+		public function getLinkList()
+		{
+			return $this->linkList;
+		}
 		
 		// pass the sourcecode by reference
 		public function extractLinksFromSourceCode( &$sourcecode )
@@ -46,17 +62,15 @@
 				
 				preg_match_all( $pattern, $subject, $matches, PREG_PATTERN_ORDER, $offset );
 				
-				echo "<p> matches: ";
-				print_r( $matches );
-				echo "</p>";
-				
 				// matches is a 2-dimensional array with the links in the second dimension.
-				$linklist = $matches[1];
+				$this->linkList = $matches[1];
 				
-				echo "<p> linklist: ";
-				print_r( $linklist );
-				echo "</p>";
+				//~ echo "<p> linkList: ";
+				//~ print_r( $this->linkList );
+				//~ echo "</p>";
 			}
 		}
+		
+		
 	}
 ?>

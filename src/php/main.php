@@ -1,5 +1,6 @@
 <?php	
 	include "LinkSearch.php";
+	include "DatabaseIO.php";
 
 
 	function main( $targetURL )
@@ -17,12 +18,26 @@
 		{
 			// print html source
 			// TODO only for debug
-			echo "<p>" . $htmlSource . "</p>";
+			//~ echo "<p>" . $htmlSource . "</p>";
 			
 			$linksearch = new LinkSearch();
-			$linksearch->targetURL = $targetURL;
+			$linksearch->setTargetURL( $targetURL );
 			$linksearch->extractLinksFromSourceCode( $htmlSource );
 			
+			$dbIO = new DatabaseIO();
+			//$dbIO->saveLinkList( $linksearch->targetURL, $linksearch->linkList );
+			
+			$foo = $dbIO->getLinkListFromDB( "abc.com" );
+			
+			//~ print_r( $foo );
+			
+			//~ echo "<p>linkList in main ";
+			//~ print_r( $linksearch->getLinkList() );
+			//~ eche "</p>";
+			
+			$dbIO->writeLinkListToDB( $linksearch->getTargetURL(), $linksearch->getLinkList() );
+			
+			//TODO print links
 		}
 	}
 ?>
