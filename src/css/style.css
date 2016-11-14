@@ -6,3 +6,7 @@ main {
 form#foobar {
 	display: inline;
 }
+
+div#resultNav {
+	background: #D4D4D4;
+}
