@@ -2,13 +2,9 @@
 	
 	class DatabaseIO
 	{
-		//~ private $conn;
-		
 		private function parseINIDB()
 		{
 			$iniPath = parse_ini_file("iniPath.ini.php");
-			
-			//~ print_r( $iniPath );
 			
 			$iniArray = parse_ini_file( $iniPath["iniPath"] );
 			
@@ -39,19 +35,19 @@
 				if( $stmt->bind_param( "s", $sourceaddress ) )
 					$stmt->execute();
 				else
-					echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+					echo "<p>Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error . "</p>";
 					
 				for( $id = 0; $id < count( $linkList ); $id++ )
 				{
 					if( $stmt->bind_param( "s", $linkList[$id] ) )
 						$stmt->execute();
 					else
-						echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+						echo "</p>Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error . "</p>";
 				}
 				$stmt->close();
 			}
 			else
-				echo "Prepare failed: (" . $stmt->errno . ") " . $stmt->error;
+				echo "<p>Prepare failed: (" . $stmt->errno . ") " . $stmt->error . "</p>";
 			
 			// write linksto
 			if( $stmt = $conn->prepare( "INSERT INTO linksto (sourcepage, link) VALUES (?, ?)" ) )
@@ -61,12 +57,12 @@
 					if( $stmt->bind_param( "ss", $sourceaddress, $linkList[$id] ) )
 						$stmt->execute();
 					else
-						echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+						echo "<p>Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error . "</p>";
 				}
 				$stmt->close();
 			}
 			else
-				echo "Prepare failed: (" . $stmt->errno . ") " . $stmt->error;
+				echo "<p>Prepare failed: (" . $stmt->errno . ") " . $stmt->error . "</p>";
 			
 			$conn->close();
 		}
@@ -84,7 +80,7 @@
 				if( $stmt->bind_param( "s", $sourceurl ) )
 					$stmt->execute();
 				else
-					echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+					echo "<p>Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error . "</p>";
 
 				$result = $stmt->get_result();
 				
@@ -97,13 +93,9 @@
 				
 				$result->free();
 				$stmt->close();
-				
-				//~ echo "<p> bla";
-				//~ print_r( $linkList );
-				//~ echo "</p>";
 			}
 			else
-				echo "Prepare failed: (" . $stmt->errno . ") " . $stmt->error;
+				echo "<p>Prepare failed: (" . $stmt->errno . ") " . $stmt->error . "</p>";
 			
 			$conn->close();
 			

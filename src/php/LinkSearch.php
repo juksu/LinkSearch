@@ -56,7 +56,7 @@
 				//		all case insensitive and least greedy string
 				// 		it can be safely assumed that the address will contain at least one dot, either because of the url or file extension
 				//		Limitations: this pattern could make problems if quotationmarks are used in the address.
-				// 		Also notice because a . in the address is required it excludes links to bookmarks on the same page 
+				// 		Also notice because a . in the address is required it excludes anchor links to the same page 
 				//			for example: <a href="#example">...
 				$pattern = "/<a\s+.*?href=[\"\']?([^\"\']*\.[^\"\']*)[\"\'][^>]*>.*?<\/a>/i";
 				
