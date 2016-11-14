@@ -1,0 +1,12 @@
+/* IE11 and below don't know <main></main> (surprise surprise) -> use main{ display: block; } for correct display */
+main {
+	display: block;
+}
+
+form#foobar {
+	display: inline;
+}
+
+div#resultNav {
+	background: #D4D4D4;
+}

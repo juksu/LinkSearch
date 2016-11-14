@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf8">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Link Search: About</title>
+</head>
+<body>
+	<main>
+		<h1>About</h1>
+		<p>
+			This application searches for links in an html file and lists them as internal and external links.
+		</p>
+		<h2>Usage</h2>
+		<p>
+			To search for links in a source provide the url including protocol to that source, for example: http://example.com. Information such as filename (including path), queries and more are optional.
+			
+			Please Notice:
+			<ul>
+				<li>Lower level subdomains will be categorized as internal links.</li>
+				<li>Same level subdomains will be categorized as external links.</li>
+				<li>Anchor links to the same page will not be recognized as links.</li>
+				<li>External and internal link differentiation is based on inclusion of https http or www in the link. Therefore it is possible that some links may we wrongly classified as internal link.</li>
+				<li>The links in the internal links result set function correctly only if the protocol is http or https.</li>
+			</ul>
+		</p>
+		<h2>Projekt</h2>
+		<p>
+			You can see and clone the project on <a href="https://github.com/juksu/LinkSearch">GitHub</a>. 
+		</p>
+		
+		<h2>Author</h2>
+		<p>
+			Andreas Fuchs
+		</p>
+		
+		<a href="./index.php"><button>Go back</button></a>
+	</main>
+</body>
+</html>
