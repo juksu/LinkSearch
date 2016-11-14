@@ -18,7 +18,10 @@
 			$conn = new mysqli($dbaccess["address"], $dbaccess["username"], $dbaccess["password"], $dbaccess["database"]);
 			
 			if( $conn->connect_error )
+			{
+				echo "connection to database failed";
 				return false;
+			}
 
 			return $conn;
 		}

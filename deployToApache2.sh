@@ -10,6 +10,5 @@ fi
 
 if [ "$1" == "uber" ]
 then
-	scp kettu@bellatrix.uberspace.de/home/kettu/html/gentics/
+	scp -r ~/Develop/Kettu/gentics/src/* kettu@bellatrix.uberspace.de:/home/kettu/html/linksearch/
 fi
-
